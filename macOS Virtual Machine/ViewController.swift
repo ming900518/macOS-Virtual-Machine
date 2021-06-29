@@ -29,7 +29,7 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
     }
     
     private func startVM() {
-        let restoreImageURL = URL(fileURLWithPath: "/Users/mingchang/Documents/UniversalMac_12.0_21A5268h_Restore.ipsw")
+        let restoreImageURL = URL(fileURLWithPath: "/Users/mingchang/Downloads/macOSVMFile/21A5268h.ipsw")
         VZMacOSRestoreImage.load(from: restoreImageURL) { result in
             switch result {
             case .success(let image):
@@ -70,7 +70,7 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
         var storages: [VZStorageDeviceConfiguration] = []
         do {
             let attachment = try VZDiskImageStorageDeviceAttachment(
-                url: URL(fileURLWithPath: "/Users/mingchang/Documents/disk.dmg"),
+                url: URL(fileURLWithPath: "/Users/mingchang/Downloads/macOSVMFile/disk.dmg"),
                 readOnly: false
             )
             
@@ -100,13 +100,13 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
             )
         }
         
-        if FileManager.default.fileExists(atPath: "/Users/mingchang/Documents/aux.img") {
+        if FileManager.default.fileExists(atPath: "/Users/mingchang/Downloads/macOSVMFile/aux.img") {
             platform.auxiliaryStorage = VZMacAuxiliaryStorage(
-                contentsOf: URL(fileURLWithPath: "/Users/mingchang/Documents/aux.img")
+                contentsOf: URL(fileURLWithPath: "/Users/mingchang/Downloads/macOSVMFile/aux.img")
             )
         } else {
             platform.auxiliaryStorage = try? VZMacAuxiliaryStorage(
-                creatingStorageAt: URL(fileURLWithPath: "/Users/mingchang/Documents/aux.img"),
+                creatingStorageAt: URL(fileURLWithPath: "/Users/mingchang/Downloads/macOSVMFile/aux.img"),
                 hardwareModel: platform.hardwareModel,
                 options: []
             )
