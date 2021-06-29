@@ -12,7 +12,6 @@ import Virtualization
 class ViewController: NSViewController, VZVirtualMachineDelegate {
     
     private var virtualMachine: VZVirtualMachine?
-    private var installer: VZMacOSInstaller?
 
     override func loadView() {
         let view = VZVirtualMachineView()
@@ -21,7 +20,7 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        startVM()
     }
     
     @IBAction func didTapStartVM(_ sender: Any) {
@@ -29,11 +28,10 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
     }
     
     private func startVM() {
-        let restoreImageURL = URL(fileURLWithPath: "/Users/mingchang/Downloads/macOSVMFile/21A5268h.ipsw")
+        let restoreImageURL = URL(fileURLWithPath: "\(NSHomeDirectory())/ipsw.ipsw")
         VZMacOSRestoreImage.load(from: restoreImageURL) { result in
             switch result {
             case .success(let image):
-                NSLog("Image: \(image)")
                 DispatchQueue.main.async {
                     self.setupVM(with: image)
                 }
@@ -55,11 +53,18 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
         let networkDevice = VZVirtioNetworkDeviceConfiguration()
         networkDevice.attachment = VZNATNetworkDeviceAttachment()
         
+        guard let mainScreen = NSScreen.main else {
+            assertionFailure()
+            return
+        }
+        let mainScreenWidth = Int(mainScreen.frame.size.width) * 2
+        let mainScreenHeight = Int(mainScreen.frame.size.height) * 2
+        
         let graphics = VZMacGraphicsDeviceConfiguration()
         graphics.displays = [
             VZMacGraphicsDisplayConfiguration(
-                widthInPixels: 2560,
-                heightInPixels: 1600,
+                widthInPixels: mainScreenWidth,
+                heightInPixels: mainScreenHeight,
                 pixelsPerInch: 220
             )
         ]
@@ -70,7 +75,7 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
         var storages: [VZStorageDeviceConfiguration] = []
         do {
             let attachment = try VZDiskImageStorageDeviceAttachment(
-                url: URL(fileURLWithPath: "/Users/mingchang/Downloads/macOSVMFile/disk.dmg"),
+                url: URL(fileURLWithPath: "\(NSHomeDirectory())/disk.dmg"),
                 readOnly: false
             )
             
@@ -100,20 +105,20 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
             )
         }
         
-        if FileManager.default.fileExists(atPath: "/Users/mingchang/Downloads/macOSVMFile/aux.img") {
+        if FileManager.default.fileExists(atPath: "\(NSHomeDirectory())/aux.img") {
             platform.auxiliaryStorage = VZMacAuxiliaryStorage(
-                contentsOf: URL(fileURLWithPath: "/Users/mingchang/Downloads/macOSVMFile/aux.img")
+                contentsOf: URL(fileURLWithPath: "\(NSHomeDirectory())/aux.img")
             )
         } else {
             platform.auxiliaryStorage = try? VZMacAuxiliaryStorage(
-                creatingStorageAt: URL(fileURLWithPath: "/Users/mingchang/Downloads/macOSVMFile/aux.img"),
+                creatingStorageAt: URL(fileURLWithPath: "\(NSHomeDirectory())/aux.img"),
                 hardwareModel: platform.hardwareModel,
                 options: []
             )
         }
         configuration.platform = platform
         
-        configuration.cpuCount = 4
+        configuration.cpuCount = 8
         configuration.memorySize = 8 * 1024 * 1024 * 1024
         configuration.entropyDevices = [entropy]
         configuration.networkDevices = [networkDevice]
@@ -135,31 +140,19 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
             vm.start { result in
                 switch result {
                 case .success:
-                    NSLog("Success")
+                    NSLog("Virtual Machine Started.")
                 case .failure(let error):
                     NSLog("Error: \(error)")
                 }
             }
-            
-//            let installer = VZMacOSInstaller(virtualMachine: vm, restoreImage: image)
-//            installer.install { result in
-//                switch result {
-//                case .success:
-//                    NSLog("Success")
-//                case .failure(let error):
-//                    NSLog("Error: \(error)")
-//                }
-//            }
-            
             self.virtualMachine = vm
-//            self.installer = installer
         } catch {
             NSLog("Error: \(error)")
         }
     }
     
     func guestDidStop(_ virtualMachine: VZVirtualMachine) {
-        NSLog("DidStop")
+        exit(0)
     }
     
     func virtualMachine(_ virtualMachine: VZVirtualMachine, didStopWithError error: Error) {
