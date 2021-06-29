@@ -6,7 +6,7 @@ I copied KhaosT's code from [here](https://gist.github.com/KhaosT/fb0499130bbfcb
 
 ### How to use this
 
-**Requirements: Apple Silicon Mac (running macOS 12), macOS 12 Beta IPSW, Xcode 13, Apple Configurator 2 and a empty dmg image(This will be your system storage)**
+**Requirements: Apple Silicon Mac (running macOS 12), macOS 12 IPSW, Xcode 13, Apple Configurator 2 and a empty dmg image (This will be your system storage)**
 
 1. Clone this project
 2. Open ViewController and replace all file path
@@ -14,7 +14,7 @@ I copied KhaosT's code from [here](https://gist.github.com/KhaosT/fb0499130bbfcb
 4. Click macOS Virtual Machine -> Start Virtual Machine
 5. Open Apple Configurator 2
 6. If everything works, There should have a VirtualMac in DFU mode, drag ipsw file into Apple Configurator 2 and click Restore
-7. About less than half hour, you should see a purple window greeting to you.
+7. When it's done, you should see a purple window greeting to you.
 
 Bon Appétit!
 
