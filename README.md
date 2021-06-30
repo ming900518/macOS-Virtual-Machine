@@ -8,8 +8,8 @@ I copied KhaosT's code from [here](https://gist.github.com/KhaosT/fb0499130bbfcb
 - Apple Silicon Mac (running macOS 12)
 - Xcode 13
 - Apple Configurator 2
-- macOS 12 IPSW (rename to ipsw.ipsw)
-- a empty dmg image (This will be your system storage, rename to disk.dmg)
+- macOS 12 IPSW
+- a empty dmg image (This will be your system storage, name it disk.dmg, you can create it from Disk Utility)
 
 ### First Time Setup
 
@@ -17,10 +17,10 @@ I copied KhaosT's code from [here](https://gist.github.com/KhaosT/fb0499130bbfcb
 2. Open Terminal and run this command  
 `defaults write com.apple.Virtualization.Installation AuthInstallSigningServerURL https://gs.apple.com`  
 3. Run this project (This project works on my Mac but might not run on yours)   
-4. Quit the app when "Virtual Machine" window showed up, move ipsw.ipsw & disk.dmg into the app's container
+4. Quit the app when "Virtual Machine" window showed up, move disk.dmg into the app's container
 5. Rerun this project  
-6. Open Apple Configurator 2, if everything works, There should have a VirtualMac in DFU mode
-7. Drag ipsw file into Apple Configurator 2, click Restore to install macOS 
+6. Open Apple Configurator 2, if everything works, There should have a VirtualMac in DFU mode  
+7. Drag macOS 12 IPSW file into Apple Configurator 2, click Restore to install macOS  
 9. When it's done, you should see a purple window greeting to you. Bon Appétit!
 
 Special thanks to [KhaosT](https://github.com/KhaosT), his code make this possible.
