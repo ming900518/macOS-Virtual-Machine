@@ -14,13 +14,11 @@ I copied KhaosT's code from [here](https://gist.github.com/KhaosT/fb0499130bbfcb
 ### First Time Setup
 
 1. Clone this project  
-2. Open Terminal and run this command  
-`defaults write com.apple.Virtualization.Installation AuthInstallSigningServerURL https://gs.apple.com`  
-3. Run this project (This project works on my Mac but might not run on yours)   
-4. Quit the app when "Virtual Machine" window showed up, move disk.dmg into the app's container
-5. Rerun this project  
-6. Open Apple Configurator 2, if everything works, There should have a VirtualMac in DFU mode  
-7. Drag macOS 12 IPSW file into Apple Configurator 2, click Restore to install macOS  
-9. When it's done, you should see a purple window greeting to you. Bon Appétit!
+2. Run (This project works on my Mac but might not run on yours)   
+3. Quit the app when "Virtual Machine" window showed up, move disk.dmg into the app's container
+4. Run it again  
+5. Open Apple Configurator 2, if everything works, There should have a VirtualMac in DFU mode  
+6. Drag macOS 12 IPSW file into Apple Configurator 2, click Restore to install macOS  
+7. When it's done, you should see a purple window greeting to you. Bon Appétit!
 
 Special thanks to [KhaosT](https://github.com/KhaosT), his code make this possible.
