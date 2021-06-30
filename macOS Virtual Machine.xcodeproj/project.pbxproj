@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A12DA58268C0A4400A75D28 /* VirtualMac2,1.ipsw in Resources */ = {isa = PBXBuildFile; fileRef = 7A12DA57268C0A4400A75D28 /* VirtualMac2,1.ipsw */; };
 		7AF9F9F3268B03C0008F58AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9F9F2268B03C0008F58AE /* AppDelegate.swift */; };
 		7AF9F9F5268B03C0008F58AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9F9F4268B03C0008F58AE /* ViewController.swift */; };
 		7AF9F9F7268B03C1008F58AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF9F9F6268B03C1008F58AE /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 
 /* Begin PBXFileReference section */
 		7A0D14F1268B205B00ADB8CE /* macOS Virtual Machine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macOS Virtual Machine.entitlements"; sourceTree = "<group>"; };
+		7A12DA57268C0A4400A75D28 /* VirtualMac2,1.ipsw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VirtualMac2,1.ipsw"; sourceTree = "<group>"; };
 		7AF9F9EF268B03C0008F58AE /* macOS Virtual Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Virtual Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF9F9F2268B03C0008F58AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AF9F9F4268B03C0008F58AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		7AF9F9F1268B03C0008F58AE /* macOS Virtual Machine */ = {
 			isa = PBXGroup;
 			children = (
+				7A12DA57268C0A4400A75D28 /* VirtualMac2,1.ipsw */,
 				7A0D14F1268B205B00ADB8CE /* macOS Virtual Machine.entitlements */,
 				7AF9F9F2268B03C0008F58AE /* AppDelegate.swift */,
 				7AF9F9F4268B03C0008F58AE /* ViewController.swift */,
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF9F9F7268B03C1008F58AE /* Assets.xcassets in Resources */,
+				7A12DA58268C0A4400A75D28 /* VirtualMac2,1.ipsw in Resources */,
 				7AF9F9FA268B03C1008F58AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,17 +8,17 @@ I copied KhaosT's code from [here](https://gist.github.com/KhaosT/fb0499130bbfcb
 - Apple Silicon Mac (running macOS 12)
 - Xcode 13
 - Apple Configurator 2
-- macOS 12 IPSW (rename to ipsw.ipsw)
-- a empty dmg image (This will be your system storage, rename to disk.dmg)
+- macOS 12 IPSW
+- a empty dmg image (This will be your system storage, name it disk.dmg, you can create it from Disk Utility)
 
 ### First Time Setup
 
 1. Clone this project  
-2. Run this project (This project works on my Mac but might not run on yours)   
-3. Quit the app when "Virtual Machine" window showed up, move ipsw.ipsw & disk.dmg into the app's container
-4. Rerun this project  
-5. Open Apple Configurator 2, if everything works, There should have a VirtualMac in DFU mode
-6. Drag ipsw file into Apple Configurator 2, click Restore to install macOS 
+2. Run (This project works on my Mac but might not run on yours)   
+3. Quit the app when "Virtual Machine" window showed up, move disk.dmg into the app's container
+4. Run it again  
+5. Open Apple Configurator 2, if everything works, There should have a VirtualMac in DFU mode  
+6. Drag macOS 12 IPSW file into Apple Configurator 2, click Restore to install macOS  
 7. When it's done, you should see a purple window greeting to you. Bon Appétit!
 
 Special thanks to [KhaosT](https://github.com/KhaosT), his code make this possible.

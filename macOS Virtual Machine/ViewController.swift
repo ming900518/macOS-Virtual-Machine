@@ -28,7 +28,7 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
     }
     
     private func startVM() {
-        let restoreImageURL = URL(fileURLWithPath: "\(NSHomeDirectory())/ipsw.ipsw")
+        let restoreImageURL = URL(fileURLWithPath: Bundle.main.path(forResource: "VirtualMac2,1", ofType: "ipsw")!)
         VZMacOSRestoreImage.load(from: restoreImageURL) { result in
             switch result {
             case .success(let image):
