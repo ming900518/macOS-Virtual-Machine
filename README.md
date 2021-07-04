@@ -28,4 +28,4 @@ I copied KhaosT's code from [here](https://gist.github.com/KhaosT/fb0499130bbfcb
 
 Try removing aux.img in the app's container, restart the app and using "Start Virtual Machine Manually" function in the menu bar before restoring.  
 
-Special thanks to [KhaosT](https://github.com/KhaosT), his code make this possible.
+Special thanks to [KhaosT](https://github.com/KhaosT), his code make this possible, here is the [project](https://github.com/KhaosT/MacVM) made by him, provides better GUI.
