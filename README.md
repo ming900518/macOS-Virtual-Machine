@@ -1,4 +1,11 @@
 # macOS Virtual Machine
+
+<hr>
+
+Use [VirtualApple edited by me](https://github.com/ming900518/VirtualApple), [VirtualApple](https://github.com/saagarjha/VirtualApple) or [MacVM](https://github.com/KhaosT/MacVM) instead if you want a much stable experience.
+
+<hr>
+
 A ARM macOS Virtual Machine, using macOS 12's new Virtualization framework.  
 I copied KhaosT's code from [here](https://gist.github.com/KhaosT/fb0499130bbfcb5754d2174e78cb68b9), all I did is change some path, add some entitlements and add a simple GUI. 
 
