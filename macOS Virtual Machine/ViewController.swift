@@ -118,8 +118,8 @@ class ViewController: NSViewController, VZVirtualMachineDelegate {
         }
         configuration.platform = platform
         
-        configuration.cpuCount = 8
-        configuration.memorySize = 8 * 1024 * 1024 * 1024
+        configuration.cpuCount = 12
+        configuration.memorySize = 12 * 1024 * 1024 * 1024
         configuration.entropyDevices = [entropy]
         configuration.networkDevices = [networkDevice]
         configuration.graphicsDevices = [graphics]
